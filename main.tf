@@ -24,6 +24,10 @@ resource "aws_subnet" "first_subnet" {
   }
 }
 
+output "vpc_id" {
+    value = aws_vpc.first_vpc.id
+}
+
 ## To remove a resource, instead of using `terraform destory` remove/comment the block
 
 # Create or provision resource
@@ -33,7 +37,7 @@ resource "aws_subnet" "first_subnet" {
 # }
 
 # How does multi-cloud get implemented?
-
+# Something along the lines of
 # provider "genesyscloud" {
 #   oauthclient_id     = "client-id"
 #   oauthclient_secret = "client-secret"
